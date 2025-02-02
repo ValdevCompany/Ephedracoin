@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация - Честное Казино</title>
+
+    <!-- Подключение Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+
+    <style>
+        body {
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            max-width: 400px; /* Ограничение ширины контейнера */
+            width: 100%; /* Установка ширины контейнера */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #ffcc00;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #ffc107;
+        }
+
+        .result {
+            word-wrap: break-word; /* Перенос длинных строк */
+            font-size: 0.9rem; /* Уменьшение размера шрифта для результата */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Регистрация</h2>
+        <form id="registrationForm">
+            <div class="mb-3">
+                <label for="username" class="form-label">Имя пользователя</label>
+                <input type="text" class="form-control" id="username" required style="text-align: center;"> <!-- Центрирование текста в поле ввода -->
+            </div>
+            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+        </form>
+        <div id="result" class="mt-3 result"></div> <!-- Добавлен класс result -->
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+
+            // Генерация уникального SHA-256 кода на основе имени пользователя и текущего времени
+            const uniqueString = username + new Date().getTime();
+            const sha256Hash = CryptoJS.SHA256(uniqueString).toString();
+
+            // Отображение результата
+            document.getElementById('result').innerHTML = `
+                <h4>Регистрация успешна!</h4>
+                <p>Ваше имя пользователя: <strong>${username}</strong></p>
+                <p>Ваш пароль: <strong>${sha256Hash}</strong></p>
+            `;
+        });
+    </script>
+
+    <!-- Подключение Bootstrap JS и Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+

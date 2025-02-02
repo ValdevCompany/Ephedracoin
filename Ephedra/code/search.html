@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polygon Coin Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .coin-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .coin-table th, .coin-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    .coin-table th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .coin-table td {
+      background-color: #fff;
+    }
+    .coin-table tr:hover {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Polygon Coin Tracker - Top Growing Tokens</h1>
+  <table class="coin-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Symbol</th>
+        <th>Price (USD)</th>
+        <th>Growth (%)</th>
+        <th>Market Cap</th>
+        <th>Last Updated</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for token in tokens %}
+      <tr>
+        <td>{{ token.name }}</td>
+        <td>{{ token.symbol }}</td>
+        <td>${{ "{:0.2f}".format(token.price) }}</td>
+        <td>{{ token.growth_percentage }}%</td>
+        <td>${{ "{:0,.0f}".format(token.market_cap) }}</td>
+        <td>{{ token.last_updated }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</body>
+</html>
+

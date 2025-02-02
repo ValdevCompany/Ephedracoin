@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Ephedra</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+      font-family: 'Comic Sans MS', sans-serif;
+    }
+ nav {
+      background-color: rgba(74, 157, 63, 0.9);
+      color: #fff;
+    }
+    .navbar-brand .logoP {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .nav-link {
+      color: #fff;
+      font-weight: bold;
+    }
+    .nav-link:hover {
+      color: #e8f5e9;
+    }
+    .navbar-toggler {
+      border-color: #fff;
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCI+PHBhdGggZD0iTTE4IDMuNEMxOCAzLjQgMTcuMyAxMy4zIDE3LjMgMTMuMyIvPjwvc3ZnPg==");
+    }
+    .container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .container h1 {
+      color: #004d00; /* Dark green */
+    }
+    .btn-primary {
+      background-color: #004d00; /* Dark green */
+      border-color: #004d00;
+    }
+    .btn-primary:hover {
+      background-color: #003300; /* Slightly darker green */
+      border-color: #003300;
+    }
+    .text-muted {
+      color: #6c757d;
+    }
+	/* Adjust the logo image styling */
+.logo-img {
+  height: 50px; /* Adjust the height of the logo as needed */
+  width: auto;  /* Maintain aspect ratio */
+  display: block;
+}
+
+/* Optional: Adjust the navbar padding and alignment */
+.navbar {
+  padding: 0.5rem 1rem;
+}
+
+/* Ensure that the navigation links are properly spaced */
+.navbar-nav .nav-link {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <a class="navbar-brand" href="{{ url_for('main') }}">
+    <img src="{{url_for('static', filename = 'ttt.png')}}" alt="Ephedra Logo" class="logo-img">
+  </a>
+  <span><b>Ephedra</b></span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><a class="nav-link" href="{{ url_for('ephedra') }}">Ephedra</a></li>
+      
+    </ul>
+	
+  </div>
+ 
+</nav>
+
+  <section id="information" class="text-center">
+    <div class="container">
+      <h1 class="animate__animated animate__fadeIn">Privacy Policy</h1>
+      <p class="animate__animated animate__fadeIn animate__delay-1s">Effective Date: 1.12.24</p>
+      <p class="animate__animated animate__fadeIn animate__delay-1s">Welcome to Ephedra. We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner. This Privacy Policy outlines how we collect, use, and protect your information when you interact with our platform and services.</p>
+      
+      <h3>1. Introduction</h3>
+      <p>Welcome to Ephedra. We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner. This Privacy Policy outlines how we collect, use, and protect your information when you interact with our platform and services.</p>
+
+      <h3>2. Information We Collect</h3>
+      <ul>
+        <li><strong>Personal Information:</strong> We do not collect personal data except ip, cookies, wallet address, browser information</li>
+        <li><strong>Financial Information:</strong> Information related to your transactions, such as wallet addresses and transaction details.</li>
+        <li><strong>Usage Data:</strong> Information about how you use our services, including IP addresses, browser types, and interaction with our platform.</li>
+        <li><strong>Cookies and Tracking Technologies:</strong> We use cookies and similar technologies to enhance your experience and collect data on how our platform is used.</li>
+      </ul>
+
+      <h3>3. How We Use Your Information</h3>
+      <ul>
+        <li><strong>To Provide and Improve Services:</strong> To process transactions, manage your account, and improve our platform.</li>
+        <li><strong>To Communicate with You:</strong> To send updates, respond to inquiries, and provide customer support.</li>
+        <li><strong>To Ensure Security:</strong> To monitor and protect against fraud, unauthorized transactions, and other potential threats.</li>
+        <li><strong>To Comply with Legal Obligations:</strong> To meet regulatory requirements and enforce our terms of service.</li>
+      </ul>
+
+      <h3>4. Data Sharing and Disclosure</h3>
+      <p>We do not sell or rent your personal information to third parties. We may share your information in the following circumstances:</p>
+      <ul>
+        <li><strong>With Service Providers:</strong> Third parties that perform services on our behalf, such as payment processing and customer support.</li>
+        <li><strong>For Legal Reasons:</strong> To comply with legal obligations, respond to legal requests, or protect our rights and the rights of others.</li>
+        <li><strong>In Case of Business Transfers:</strong> If we undergo a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction.</li>
+      </ul>
+
+      <h3>5. Data Security</h3>
+      <p>We implement appropriate security measures to protect your personal information from unauthorized access, use, or disclosure. However, no system can be completely secure, and we cannot guarantee the absolute security of your information.</p>
+
+      <h3>6. Your Rights</h3>
+      <ul>
+        <li><strong>Access and Correction:</strong> You may request access to or correction of your personal information.</li>
+        <li><strong>Deletion:</strong> You may request the deletion of your personal information, subject to applicable legal and contractual obligations.</li>
+        <li><strong>Opt-Out:</strong> You may opt out of receiving promotional communications from us at any time.</li>
+      </ul>
+
+      <h3>7. Changes to This Privacy Policy</h3>
+      <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date. Your continued use of our platform after any changes constitutes your acceptance of the updated policy.</p>
+
+      <h3>8. Contact Us</h3>
+      <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:</p>
+      <ul>
+        <li><strong>Email:</strong> valdevcompany@gmail.com</li>
+        <li
+      </ul>
+
+      <h3>9. Disclaimer</h3>
+      <p>Please note that this Privacy Policy is not related to the promotion or endorsement of ephedrine or any substances containing ephedrine. The term "Ephedra" used in our platform is purely for branding purposes and does not imply any connection to ephedrine.</p>
+    </div>
+  </section>
+  
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

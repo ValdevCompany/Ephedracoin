@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Balance Checker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #0e0e0e;
+            color: #00ff00; /* Зеленый цвет текста */
+        }
+        .container {
+            margin-top: 50px;
+            padding: 20px;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            background-color: #1a1a1a; /* Темный фон для контейнера */
+        }
+        h1, h2, h3 {
+            text-align: center;
+        }
+        .btn {
+            background-color: #00ff00; /* Зеленая кнопка */
+            color: #0e0e0e; /* Черный текст на кнопке */
+        }
+        .alert {
+            background-color: #333333; /* Темный фон для алерта */
+            color: #00ff00; /* Зеленый текст для алерта */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Проверка баланса криптовалюты</h1>
+
+        <h3 class="text-center">Ваш баланс кошелька: <span id="balanceDisplay">0</span> {{ currency }}</h3>
+
+        <form method="POST" class="mb-4">
+            <div class="form-group">
+                <select name="currency" class="form-control" required>
+                    <option value="eth">Ethereum</option>
+                    <option value="btc">Bitcoin</option>
+                    <option value="ltc">Litecoin</option>
+                    <option value="doge">Dogecoin</option>
+                    <option value="usdt">Tether</option>
+                </select>
+                <input type="text" name="address" class="form-control mt-2" placeholder="Введите адрес" required>
+            </div>
+            <button type="submit" class="btn btn-block">Проверить баланс</button>
+        </form>
+
+        <div id="balanceAlert" class="alert" style="display:none;">
+            <strong>Баланс:</strong> <span id="balance"></span>
+        </div>
+    </div>
+
+    <script>
+        // Пример функции для обновления баланса (функциональность нужно реализовать на сервере)
+        document.querySelector('form').onsubmit = function(event) {
+            event.preventDefault();
+            const address = this.address.value;
+            const currency = this.currency.value;
+
+            // Здесь нужно вызвать серверный код для получения баланса по адресу
+            // Для примера, просто выводим случайный баланс
+            const balance = Math.random() * 10; // случайный баланс для примера
+            document.getElementById('balance').innerText = balance.toFixed(4) + ' ' + currency.toUpperCase();
+            document.getElementById('balanceDisplay').innerText = balance.toFixed(4);
+            document.getElementById('balanceAlert').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

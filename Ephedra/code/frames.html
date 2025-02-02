@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ephedron Philanthropy Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gray-100" style="font-family: 'Comic Sans MS', sans-serif;">
+
+<!-- Navbar -->
+<nav class="bg-gray-900 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo (обернут в <a>) -->
+        <a href="/" class="text-xl font-bold flex items-center">
+            <img src="{{ url_for('static', filename='ttt.png') }}" alt="Ephedron Logo" class="h-10 mr-3">
+            <span>Ephedron Philanthropy</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex space-x-6">
+            <a href="{{ url_for('donate') }}" class="hover:text-yellow-500">Donate</a>
+            <a href="{{ url_for('about') }}" class="hover:text-yellow-500">About Us</a>
+            <a href="{{ url_for('ephedra') }}" class="hover:text-yellow-500">Ephedra</a>
+        </div>
+
+        <!-- Бургер-меню (только для мобильных) -->
+        <button id="menu-toggle" class="lg:hidden focus:outline-none">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16">
+                </path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Мобильное меню -->
+    <div id="mobile-menu" class="hidden lg:hidden mt-4 space-y-4 text-center">
+        <a href="{{ url_for('donate') }}" class="block text-white hover:text-yellow-500">1. Donate</a>
+        <a href="{{ url_for('about') }}" class="block text-white hover:text-yellow-500">2. About Us</a>
+        <a href="{{ url_for('ephedra') }}" class="block text-white hover:text-yellow-500">3. Ephedra</a>
+    </div>
+</nav>
+
+<!-- Скрипт для бургер-меню -->
+<script>
+document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+</script>
+
+    <!-- Projects Section -->
+    <section class="py-10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-extrabold text-center mb-10">Our Projects</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- First Project Card -->
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <img src="{{ url_for('static', filename='saving-energy.jpg') }}" alt="Project Image" class="rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Exploring Alternative Energy Solutions</h3>
+                    <p class="text-gray-600 mb-4">This project promotes research into alternative energy sources like solar, wind, and geothermal to address climate change and reduce dependence on fossil fuels. It encourages public participation and voting to advance renewable energy solutions.</p>
+                    <b>Amount: 30 BTC</b>
+					
+                    
+
+                    <a href="{{ url_for('project') }}" class="bg-yellow-500 text-white py-2 px-4 rounded-lg inline-block text-center hover:bg-yellow-400 transition duration-300">Learn More</a>
+                </div>
+
+                <!-- Second Project Card (Hidden) -->
+                <div class="bg-white shadow-lg rounded-lg p-6" style="display: none;">
+                    <img src="project-image.jpg" alt="Project Image" class="rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Project Title</h3>
+                    <p class="text-gray-600 mb-4">A brief description of the project. Focuses on scientific and medical research, aimed at improving lives through innovative solutions.</p>
+
+                    <!-- Progress Bar -->
+                    <div class="w-full bg-gray-200 rounded-full h-6 mb-4">
+                        <div class="bg-yellow-500 h-6 rounded-full text-xs text-white text-center leading-6" style="width: 45%;">$9,000 Raised</div>
+                    </div>
+
+                    <a href="{{ url_for('project') }}" class="bg-yellow-500 text-white py-2 px-4 rounded-lg inline-block text-center hover:bg-yellow-400 transition duration-300">Learn More</a>
+                </div>
+
+                <!-- Third Project Card (Hidden) -->
+                <div class="bg-white shadow-lg rounded-lg p-6" style="display: none;">
+                    <img src="project-image.jpg" alt="Project Image" class="rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Project Title</h3>
+                    <p class="text-gray-600 mb-4">A brief description of the project. Focuses on scientific and medical research, aimed at improving lives through innovative solutions.</p>
+                    <b>Amount: 250000$</b>
+
+                    <div class="w-full bg-gray-200 rounded-full h-6 mb-4">
+    <div id="progress-bar" class="bg-yellow-500 h-6 rounded-full text-xs text-white text-center leading-6">0 BTC Raised</div>
+</div>
+                    <a href="{{ url_for('project') }}" class="bg-yellow-500 text-white py-2 px-4 rounded-lg inline-block text-center hover:bg-yellow-400 transition duration-300">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6 text-center fixed bottom-0 w-full">
+        <p>&copy; 2025 Ephedron Philanthropy. All Rights Reserved.</p>
+    </footer>
+</body>
+<script>
+    async function updateProgressBar() {
+        try {
+            // Получаем баланс и прогресс с сервера
+            const response = await fetch('/balance');
+            const data = await response.json();
+
+            const balance = data.balance; // Баланс в BTC
+            const progress = data.progress; // Прогресс в процентах
+
+            // Обновляем прогресс-бар
+            const progressBar = document.getElementById('progress-bar');
+            progressBar.style.width = `${progress}%`; // Обновляем ширину прогресс-бара
+            progressBar.textContent = `${balance.toFixed(2)} BTC Raised`; // Обновляем текст в прогресс-баре
+        } catch (error) {
+            console.error('Error fetching balance:', error);
+        }
+    }
+
+    // Обновляем прогресс-бар каждую минуту
+    setInterval(updateProgressBar, 60000); // Каждые 60 секунд
+    updateProgressBar(); // Инициализация при загрузке страницы
+</script>
+
+
+</html>

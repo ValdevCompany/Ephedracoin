@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Ephedron Philanthropy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gray-100" style="font-family: 'Comic Sans MS', sans-serif;">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-900 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo and Name -->
+            <div class="flex items-center space-x-4">
+                <img src="{{ url_for('static', filename='ttt.png') }}" alt="Ephedron Logo" class="h-10">
+               <span class="text-xl font-bold cursor-pointer" onclick="window.location.href = '/'">Ephedron Philanthropy</span>
+            </div>
+            
+            <!-- Desktop Navbar -->
+            <div class="hidden lg:flex space-x-6">
+           
+                <a href="{{ url_for('donate') }}" class="hover:text-yellow-500">Donate</a>
+                <a href="{{ url_for('ephedra') }}" class="hover:text-yellow-500">Ephedra</a>
+                <a href="{{ url_for('projects') }}" class="hover:text-yellow-500">Projects</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden">
+                <button id="menu-toggle" class="text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navbar -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-gray-900 text-white p-4 space-y-4">
+            <ul class="list-decimal pl-4">
+                
+                <li><a href="{{ url_for('donate') }}" class="hover:text-yellow-500">Donate</a></li>
+                <li><a href="{{ url_for('ephedra') }}" class="hover:text-yellow-500">Ephedra</a></li>
+                <li><a href="{{ url_for('projects') }}" class="hover:text-yellow-500">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Us Section -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-extrabold mb-6">About Ephedron Philanthropy</h1>
+            <p class="text-lg mb-8">
+                Ephedron Philanthropy is dedicated to supporting scientific and medical innovations that can transform lives. We are a non-profit organization focused on advancing research, technologies, and solutions that will significantly improve health outcomes globally.
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-4">Our Mission</h2>
+            <p class="text-lg mb-8">
+                At Ephedron Philanthropy, we believe that research and innovation are key to solving the challenges of modern healthcare. Our mission is to fund and support projects that explore new treatments, technologies, and medical solutions. By partnering with universities, researchers, and healthcare organizations, we aim to drive meaningful change and advance global health.
+            </p>
+            <h3 class="text-xl font-semibold mb-4">Why We Focus on Scientific and Medical Research</h3>
+            <p class="text-lg mb-8">
+                Our focus on scientific and medical research is rooted in the belief that the answers to many of humanity's most pressing challenges lie in the scientific method. By supporting groundbreaking research, we aim to contribute to the development of new therapies, preventive measures, and technologies that can make a real difference in people's lives.
+            </p>
+        </div>
+    </section>
+
+    <!-- How You Can Help -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-4">How You Can Help</h2>
+            <p class="text-lg mb-8">
+                Your support is crucial to the success of our mission. There are several ways you can get involved and help us fund essential research and innovative solutions:
+            </p>
+            <ul class="list-disc text-left mx-auto mb-8 max-w-3xl">
+                <li class="text-lg mb-4">Donate financially to support our ongoing research projects.</li>
+                <li class="text-lg mb-4">Share our mission with your friends and family to help raise awareness.</li>
+                <li class="text-lg mb-4">Volunteer your time, expertise, or services to assist in our research efforts.</li>
+                <li class="text-lg mb-4">Become an advocate for scientific and medical research in your community.</li>
+            </ul>
+            <a href="{{ url_for('donate') }}" class="bg-yellow-500 text-white py-3 px-6 rounded-lg text-xl hover:bg-yellow-400 transition duration-300">Donate Now</a>
+        </div>
+    </section>
+
+    <!-- Privacy and Data Policy -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-4">Privacy and Data Policy</h2>
+            <p class="text-lg mb-8">
+                At Ephedron Philanthropy, we are committed to protecting your privacy. We understand the importance of personal data and ensure that any information shared with us is handled responsibly. Here is how we safeguard your information:
+            </p>
+            <ul class="list-disc text-left mx-auto mb-8 max-w-3xl">
+                <li class="text-lg mb-4">All personal data provided during donations is encrypted and stored securely.</li>
+                <li class="text-lg mb-4">We never share your personal information with third parties unless legally required to do so.</li>     
+                <li class="text-lg mb-4">You can choose to remain anonymous when donating if you prefer.</li>
+            </ul>
+            <p class="text-lg mb-8">
+                We value your trust and ensure that your data is always handled with the utmost care.
+            </p>
+        </div>
+    </section>
+
+    <!-- Ephedra Cryptocurrency -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-4">Introducing Ephedra Cryptocurrency</h2>
+            <p class="text-lg mb-8">
+                We are proud to announce the launch of our own cryptocurrency, Ephedra (EPH). This currency is designed to fuel our philanthropic efforts and help us raise funds for innovative scientific and medical research.
+            </p>
+            <h3 class="text-xl font-semibold mb-4">How Ephedra Cryptocurrency Supports Our Mission</h3>
+            <p class="text-lg mb-8">
+                Ephedra cryptocurrency offers a unique way for supporters to contribute to our mission while also participating in the digital economy. By using blockchain technology, we ensure transparency and traceability of all funds raised through Ephedra. Additionally, EPH tokens can be used to support research initiatives, participate in scientific projects, and reward contributors for their involvement.
+            </p>
+            <a href="{{ url_for('ephedra') }}" class="bg-yellow-500 text-white py-3 px-6 rounded-lg text-xl hover:bg-yellow-400 transition duration-300">Learn More About Ephedra</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6 text-center">
+        <p>&copy; 2025 Ephedron Philanthropy. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle script
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuToggle.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+</html>

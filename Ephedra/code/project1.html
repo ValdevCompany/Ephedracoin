@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate for Alternative Energy Research</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/@heroicons/react/outline" rel="stylesheet">
+</head>
+
+<body class="font-sans bg-gray-100" style="font-family: 'Comic Sans MS', sans-serif;">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-900 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="{{ url_for('static', filename='ttt.png') }}" alt="Ephedron Logo" class="h-10">
+                <span class="text-xl font-bold cursor-pointer" onclick="window.location.href = '/'">Ephedron Philanthropy</span>
+            </div>
+            <div class="hidden lg:flex space-x-6">
+                
+                <a href="{{ url_for('donate') }}" class="hover:text-yellow-500">Donate</a>
+                <a href="{{ url_for('about') }}" class="hover:text-yellow-500">About Us</a>
+                <a href="{{ url_for('projects') }}" class="hover:text-yellow-500">Projects</a>
+				<a href="{{ url_for('ephedra') }}" class="text-white hover:text-yellow-500"> Ephedra</a>
+            </div>
+            <div class="lg:hidden">
+                <button id="menu-toggle" class="text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="lg:hidden hidden bg-gray-900 text-white p-4 space-y-4">
+            <ul class="list-decimal pl-4">
+                
+                <li><a href="{{ url_for('donate') }}" class="hover:text-yellow-500">Donate</a></li>
+                <li><a href="{{ url_for('about') }}" class="hover:text-yellow-500">About Us</a></li>
+                <li><a href="{{ url_for('projects') }}" class="hover:text-yellow-500">Projects</a></li>
+				<li><a href="{{ url_for('ephedra') }}" class="text-white hover:text-yellow-500"> Ephedra</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-500 to-indigo-600 py-20 text-center text-white">
+        <h1 class="text-5xl font-extrabold mb-4">Join Us in Shaping a Sustainable Future</h1>
+        <p class="text-xl mb-8">Support breakthrough research in alternative energy and be a part of the global movement towards clean, renewable energy sources.</p>
+        <a href="{{ url_for('donate') }}" class="bg-yellow-500 text-white py-3 px-6 rounded-lg text-xl hover:bg-yellow-400 transition duration-300">Donate Now</a>
+    </section>
+
+    <!-- About the Research -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-6">Why Alternative Energy?</h2>
+            <p class="text-lg max-w-2xl mx-auto mb-8">
+                As the world grapples with climate change and energy shortages, investing in alternative energy research has never been more crucial. Our research focuses on developing new, sustainable solutions that reduce our dependence on fossil fuels and protect the planet for future generations.
+            </p>
+            <img src="{{ url_for('static', filename='solar-panels.png') }}" alt="Research on Alternative Energy" class="w-1/3 h-auto rounded-lg shadow-lg mx-auto">
+        </div>
+    </section>
+
+    <!-- The Importance of Alternative Energy in the Face of Global Challenges -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-6">Importance of Alternative Energy in the Face of Global Challenges</h2>
+            <h3 class="text-2xl font-semibold mb-4">Global Threats and the Need for Alternative Energy Sources</h3>
+            <p class="text-lg max-w-2xl mx-auto mb-8">
+                In the face of global climate change and the depletion of fossil fuels, finding alternative energy solutions has never been more crucial for the future of our planet. The World Bank warns of catastrophic consequences if current energy consumption trends continue until 2050. Despite debates around these forecasts, it is clear that without transitioning to more eco-friendly and renewable energy sources, humanity risks facing significant challenges.
+            </p>
+            <h3 class="text-2xl font-semibold mb-4">Key Research Areas in Alternative Energy</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="flex items-center space-x-4 bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <img src="https://img.icons8.com/ios/50/000000/solar-panel.png" alt="Solar Energy" class="w-12 h-12">
+                    <p class="text-lg">Solar Energy: Utilizing solar panels and collectors to convert sunlight into electricity and heat. Continuous advancements are lowering costs and increasing system efficiency.</p>
+                </div>
+                <div class="flex items-center space-x-4 bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <img src="https://img.icons8.com/ios/50/000000/wind-turbine.png" alt="Wind Energy" class="w-12 h-12">
+                    <p class="text-lg">Wind Energy: Generating energy with wind turbines. Current research aims to enhance turbine capacity, reduce noise, and develop solutions for both offshore and onshore installations.</p>
+                </div>
+                <div class="flex items-center space-x-4 bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <img src="https://img.icons8.com/?size=100&id=25782&format=png&color=000000" alt="Geothermal Energy" class="w-12 h-12">
+                    <p class="text-lg">Geothermal Energy: Using the Earth’s heat for heating and electricity generation. Progress includes deeper drilling methods and improved heat pumps.</p>
+                </div>
+                <div class="flex items-center space-x-4 bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <img src="https://img.icons8.com/ios/50/000000/biomass.png" alt="Biomass Energy" class="w-12 h-12">
+                    <p class="text-lg">Biomass Energy: Converting organic materials into energy. New pyrolysis and gasification methods promise significantly higher efficiency.</p>
+                </div>
+                <div class="flex items-center space-x-4 bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <img src="https://img.icons8.com/ios/50/000000/hydrogen.png" alt="Hydrogen Energy" class="w-12 h-12">
+                    <p class="text-lg">Hydrogen Energy: While hydrogen’s potential as an energy carrier is not yet fully realized, techniques like water splitting (Brown’s gas) could help solve the problem of fossil fuel dependency.</p>
+                </div>
+                <div class="flex items-center space-x-4 bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <img src="https://img.icons8.com/ios/50/000000/thermometer.png" alt="Thermoenergy" class="w-12 h-12">
+                    <p class="text-lg">Thermo- and Piezoenergy: Utilizing temperature gradients and mechanical vibrations to generate energy. These technologies allow for the conversion of heat and mechanical motion into electricity, providing additional opportunities for using everyday natural phenomena.</p>
+                </div>
+            </div>
+            <h3 class="text-2xl font-semibold mb-4">Examples of Success and Statistics</h3>
+            <ul class="list-disc text-lg mb-8 space-y-4 max-w-2xl mx-auto">
+                <li><strong>Solar Energy Cost Reduction</strong>: The cost of solar panels has dropped by 80% in recent decades, making solar energy accessible to a wide range of users.</li>
+                <li><strong>Growth in Wind Energy</strong>: The global capacity of wind power has increased fourfold from 2007 to 2020, highlighting the growing interest and opportunities in this sector.</li>
+                <li><strong>Hydrogen Vehicles</strong>: The use of hydrogen fuel cells in transportation is gaining popularity, especially in Asia, where mass production of hydrogen vehicles has begun.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- The Impact of Your Donation -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-6">Your Contribution Makes a Difference</h2>
+            <p class="text-lg max-w-2xl mx-auto mb-8">
+                Every dollar you contribute directly funds research in clean energy technologies. With your support, we can accelerate the development of solutions that will reduce emissions, improve energy efficiency, and bring renewable power to communities around the world.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Solar Energy Innovations</h3>
+                    <p class="text-lg mb-4">Contribute to the development of cutting-edge solar technologies that promise to revolutionize energy production.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Wind Power Solutions</h3>
+                    <p class="text-lg mb-4">Help fund research into advanced wind energy systems that can power cities and industries with minimal environmental impact.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Energy Storage Systems</h3>
+                    <p class="text-lg mb-4">Support innovations in energy storage to ensure that renewable energy can be stored efficiently for future use.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How You Can Get Involved -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-6">How You Can Get Involved</h2>
+            <p class="text-lg mb-8">There are several ways you can help support alternative energy research, beyond just making a donation:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="bg-gray-200 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Donate</h3>
+                    <p class="text-lg mb-4">Your financial contribution is the most direct way to support the research and development of alternative energy technologies.</p>
+                </div>
+                <div class="bg-gray-200 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Spread the Word</h3>
+                    <p class="text-lg mb-4">Share this cause with your friends and family to raise awareness about the importance of renewable energy.</p>
+                </div>
+                <div class="bg-gray-200 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Volunteer</h3>
+                    <p class="text-lg mb-4">Get involved with local organizations or projects working on sustainable energy initiatives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p class="text-sm">© 2025 Ephedron Philanthropy | All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
+

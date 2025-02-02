@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - Wallet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f7f8fa;
+            color: #333;
+            padding: 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 40px;
+            background-color: #4C9CE7;
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .account-icon {
+            font-size: 2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .account-icon:hover {
+            transform: scale(1.2);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .wallet-info {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 50px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .wallet-info:hover {
+            transform: scale(1.02);
+        }
+
+        .wallet-info h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .wallet-info p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .wallet-info .balance {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #27ae60;
+            margin: 20px 0;
+        }
+
+        .wallet-actions {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #FFB74D;
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #F57C00;
+            transform: scale(1.05);
+        }
+
+        .transaction-history {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .transaction-history h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .transaction-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .transaction-table th, .transaction-table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .transaction-table th {
+            background-color: #f2f2f2;
+        }
+
+        .transaction-table td {
+            color: #555;
+        }
+
+        .transaction-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #4C9CE7;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Account</h1>
+        <div class="account-icon">&#128100;</div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Wallet Info Section -->
+        <div class="wallet-info">
+            <h2>Your Wallet</h2>
+            <p>Balance</p>
+            <p class="balance">$500.00</p>
+            <div class="wallet-actions">
+                <button class="btn">Deposit</button>
+                <button class="btn">Withdraw</button>
+            </div>
+        </div>
+
+        <!-- Transaction History Section -->
+        <div class="transaction-history">
+            <h3>Transaction History</h3>
+            <table class="transaction-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Transaction</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-11-01</td>
+                        <td>Deposit</td>
+                        <td>$100.00</td>
+                    </tr>
+                    <tr>
+                        <td>2024-11-05</td>
+                        <td>Withdraw</td>
+                        <td>-$50.00</td>
+                    </tr>
+                    <tr>
+                        <td>2024-11-10</td>
+                        <td>Deposit</td>
+                        <td>$200.00</td>
+                    </tr>
+                    <tr>
+                        <td>2024-11-15</td>
+                        <td>Withdraw</td>
+                        <td>-$150.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        © 2024 Earn & Watch. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </footer>
+
+    <script>
+        // JavaScript can be added here for interactions like popups, dynamic data updates, etc.
+    </script>
+
+</body>
+</html>

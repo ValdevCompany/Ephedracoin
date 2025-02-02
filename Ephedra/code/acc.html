@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аккаунт - Честное Казино</title>
+
+    <!-- Подключение Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Подключение Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            max-width: 500px; /* Ограничение ширины контейнера */
+            width: 100%; /* Установка ширины контейнера */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .icon {
+            font-size: 100px;
+            margin-bottom: 20px;
+        }
+
+        .payment-method {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .payment-method i {
+            font-size: 30px; /* Размер иконки */
+            margin-right: 10px; /* Отступ справа от иконки */
+            color: #ffcc00; /* Цвет иконки */
+        }
+
+        .btn-primary {
+            background-color: #ffcc00;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #ffc107;
+        }
+
+        .disclaimer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #ccc;
+            text-align: left;
+        }
+
+        .collapse {
+            text-align: left;
+            padding: 10px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Ваш Аккаунт</h2>
+        
+        <div class="icon" id="animalIcon"></div>
+
+        <h4>Способы пополнения баланса</h4>
+        <div class="payment-method">
+            <i class="fab fa-cc-visa"></i>
+            <span>Visa</span>
+        </div>
+        <div class="payment-method">
+            <i class="fab fa-cc-mastercard"></i>
+            <span>MasterCard</span>
+        </div>
+        <div class="payment-method">
+            <i class="fab fa-yandex"></i>
+            <span>Yandex.Money</span>
+        </div>
+        <div class="payment-method">
+            <i class="fab fa-webmoney"></i>
+            <span>Webmoney</span>
+        </div>
+
+        <h4>Способы вывода средств</h4>
+        <div class="payment-method">
+            <i class="fab fa-cc-visa"></i>
+            <span>Visa</span>
+        </div>
+        <div class="payment-method">
+            <i class="fab fa-cc-mastercard"></i>
+            <span>MasterCard</span>
+        </div>
+        <div class="payment-method">
+            <i class="fab fa-yandex"></i>
+            <span>Yandex.Money</span>
+        </div>
+        <div class="payment-method">
+            <i class="fab fa-webmoney"></i>
+            <span>Webmoney</span>
+        </div>
+
+        <h4>Максимальные суммы</h4>
+        <p>Максимальная сумма пополнения: <strong>100,000 Руб.</strong></p>
+        <p>Максимальная сумма вывода: <strong>50,000 Руб.</strong></p>
+
+        <div class="disclaimer">
+            <h5>Политика Казино</h5>
+            <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#policy">Показать политику</button>
+            <div class="collapse" id="policy">
+                <p>Наше казино работает на основе прозрачных алгоритмов, которые гарантируют справедливость каждой игры. Мы используем лицензированное программное обеспечение и регулярно проводим независимые проверки, чтобы убедиться, что ваши шансы на выигрыш остаются справедливыми. Наша цель — обеспечить безопасную и надежную игровую среду для всех наших пользователей.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Массив с иконками животных
+        const animalIcons = [
+            '🐶', // Собака
+            '🐱', // Кошка
+            '🐭', // Мышь
+            '🐹', // Хомяк
+            '🐰', // Кролик
+            '🦊', // Лиса
+            '🐻', // Медведь
+            '🐼', // Панда
+            '🐯', // Тигр
+            '🦁', // Лев
+            '🐨', // Коала
+            '🐧', // Пингвин
+        ];
+
+        // Генерация случайной иконки животного
+        const randomIndex = Math.floor(Math.random() * animalIcons.length);
+        const animalIcon = animalIcons[randomIndex];
+        
+        // Отображение иконки на странице
+        document.getElementById('animalIcon').textContent = animalIcon;
+    </script>
+
+    <!-- Подключение Bootstrap JS и Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

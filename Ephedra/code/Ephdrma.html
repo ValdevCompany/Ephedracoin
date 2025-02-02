@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ephedron Philanthropy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gray-100" style="font-family: 'Comic Sans MS', sans-serif;">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-900 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo and Name -->
+            <div class="flex items-center space-x-4">
+                <img src="{{ url_for('static', filename='ttt.png') }}" alt="Ephedron Logo" class="h-10"> <!-- Replace with your logo -->
+                <span class="text-xl font-bold cursor-pointer onclick="window.location.href = '/'">Ephedron Philanthropy</span>
+            </div>
+            
+            <!-- Desktop Navbar -->
+            <div class="hidden lg:flex space-x-6">
+                <a href="{{ url_for('about') }}" class="hover:text-yellow-500">About Us</a>
+                <a href="{{ url_for('projects') }}" class="hover:text-yellow-500">Projects</a>
+                <a href="{{ url_for('donate') }}" class="hover:text-yellow-500">Donate</a>
+                <a href="{{ url_for('ephedra') }}" class="hover:text-yellow-500">Ephedra</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden">
+                <button id="menu-toggle" class="text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navbar -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-gray-900 text-white p-4 space-y-4">
+            <ul class="list-decimal pl-4">
+                <li><a href="{{ url_for('about') }}" class="hover:text-yellow-500">About Us</a></li>
+                <li><a href="{{ url_for('projects') }}" class="hover:text-yellow-500">Projects</a></li>
+                <li><a href="{{ url_for('donate') }}" class="hover:text-yellow-500">Donate</a></li>
+                <li><a href="{{ url_for('ephedra') }}" class="hover:text-yellow-500">Ephedra</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="header flex items-center justify-center text-white text-center bg-black bg-opacity-50" style="background: url('{{ url_for('static', filename='phon.jpg') }}') no-repeat center center/cover; height: 100vh;">
+        <div class="p-10 max-w-4xl mx-auto bg-black bg-opacity-60 rounded-lg">
+            <h1 class="text-5xl font-extrabold leading-tight mb-5">Ephedron Philanthropy</h1>
+            <p class="text-xl mb-6">Supporting transformative scientific and medical research.</p>
+            <a href="{{ url_for('donate') }}" class="bg-yellow-500 text-white py-3 px-6 rounded-lg text-xl hover:bg-yellow-400 transition duration-300">Donate Now</a>
+        </div>
+    </header>
+
+    <footer class="bg-gray-900 text-white py-6 text-center">
+        <p>&copy; 2025 Ephedron Philanthropy. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle script
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuToggle.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Ephedron Philanthropy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+             font-family: 'Comic Sans MS', sans-serif;
+            background-color: #ffffff;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        footer {
+            margin-top: auto;
+            background-color: #2d2d2d;
+            text-align: center;
+            padding: 20px;
+        }
+        .progress-bar {
+            background-color: #fbbf24;
+            height: 30px;
+            border-radius: 5px;
+        }
+        .btn-yellow:hover {
+            background-color: #f59e0b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="p-4 bg-gray-900">
+        <div class="flex justify-between items-center container mx-auto">
+            <div class="flex items-center space-x-3">
+                <img src="{{ url_for('static', filename='ttt.png') }}" alt="Ephedron Logo" class="h-10">
+                <span class="text-xl font-bold text-white cursor-pointer" onclick="window.location.href = '/'">Ephedron Philanthropy</span>
+            </div>
+
+            <!-- Button to toggle menu on mobile -->
+            <div class="lg:hidden">
+                <button id="navbar-toggle" class="text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navbar links -->
+            <div class="hidden lg:flex space-x-6">
+                
+                <a href="{{ url_for('projects') }}" class="text-white hover:text-yellow-500">Projects</a>
+                <a href="{{ url_for('about') }}" class="text-white hover:text-yellow-500"> About Us</a>
+                <a href="{{ url_for('ephedra') }}" class="text-white hover:text-yellow-500"> Ephedra</a>
+            </div>
+        </div>
+
+        <!-- Mobile dropdown menu (initially hidden) -->
+        <div id="mobile-menu" class="lg:hidden mt-4 space-y-4 hidden">
+            
+            <a href="{{ url_for('projects') }}" class="block text-white hover:text-yellow-500"> 1. Projects</a>
+            <a href="{{ url_for('about') }}" class="block text-white hover:text-yellow-500">2. About Us</a>
+            <a href="{{ url_for('ephedra') }}" class="block text-white hover:text-yellow-500">3. Ephedra</a>
+        </div>
+    </nav>
+
+    <!-- Donate Section -->
+    <section class="py-16 text-center container mx-auto">
+        <h2 class="text-4xl font-bold text-yellow-500 mb-4">Make a Difference</h2>
+        <p class="text-xl text-black mb-6">Your donation supports groundbreaking scientific and medical research. Donate now using Bitcoin or Ephedra cryptocurrency.</p>
+        
+        <div class="space-y-5">
+            <h4 class="text-lg">Bitcoin Wallet Address:</h4>
+            <code class="block bg-gray-700 text-white p-4 rounded-lg">bc1q5kklnsu9c55v0uswszm3wwvf32v5srz3yqrut7</code>
+            <h4 class="text-lg">Ephedra Wallet Address:</h4>
+            <code class="block bg-gray-700 text-white p-4 rounded-lg">FmjL6aaNxu2o6PhMwoooyk8ZFWK43UU3v4VxJBgEGSAR</code>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900">
+        <p class="text-white">© 2025 Ephedron Philanthropy.</p>
+    </footer>
+
+    <script>
+        // Toggle mobile menu visibility
+        const navbarToggle = document.getElementById('navbar-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        navbarToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');  // Toggle the "hidden" class on mobile menu
+        });
+    </script>
+
+</body>
+</html>

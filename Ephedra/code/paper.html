@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>White Paper - Ephedra Token</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+      font-family: 'Comic Sans MS', sans-serif;
+    }
+    nav {
+      background-color: rgba(74, 157, 63, 0.9);
+      color: #fff;
+    }
+    .navbar-brand .logoP {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .nav-link {
+      color: #fff;
+      font-weight: bold;
+    }
+    .nav-link:hover {
+      color: #e8f5e9;
+    }
+    .navbar-toggler {
+      border-color: #fff;
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCI+PHBhdGggZD0iTTE4IDMuNEMxOCAzLjQgMTcuMyAxMy4zIDE3LjMgMTMuMyIvPjwvc3ZnPg==");
+    }
+    .container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .container h1 {
+      color: #004d00; /* Dark green */
+    }
+    .btn-primary {
+      background-color: #004d00; /* Dark green */
+      border-color: #004d00;
+    }
+    .btn-primary:hover {
+      background-color: #003300; /* Slightly darker green */
+      border-color: #003300;
+    }
+    .text-muted {
+      color: #6c757d;
+    }
+    .logo-img {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+    .navbar {
+      padding: 0.5rem 1rem;
+    }
+    .navbar-nav .nav-link {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <a class="navbar-brand" href="{{ url_for('main') }}">
+      <img src="{{url_for('static', filename = 'ttt.png')}}" alt="Ephedra Logo" class="logo-img">
+    </a>
+    <span><b>Ephedra</b></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('ephedra') }}">Ephedra</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="whitepaper" class="text-center">
+    <div class="container">
+      <h1 class="animate__animated animate__fadeIn">Ephedra Token White Paper</h1>
+      <p class="animate__animated animate__fadeIn animate__delay-1s">Effective Date: 1.12.24</p>
+      <p class="animate__animated animate__fadeIn animate__delay-1s">Welcome to the Ephedra Token White Paper. This document explains the key features and vision behind the Ephedra Token (SOL-based), a cryptocurrency designed to support scientific research, provide a decentralized payment solution, and drive innovation in blockchain technology.</p>
+
+      <h3>1. Introduction</h3>
+      <p>Ephedra Token is a decentralized cryptocurrency built on the Solana blockchain, aimed at supporting cutting-edge research and providing a reliable payment system. Its fast transaction capabilities, low fees, and scalability make it an ideal tool for both the scientific community and digital economy participants.</p>
+
+      <h3>2. The Ephedra Token</h3>
+      <p>The Ephedra Token (EPH) is a digital asset created to facilitate both research funding and efficient peer-to-peer transactions. It is designed for integration within the decentralized ecosystem, enabling seamless financial operations and scientific collaboration.</p>
+
+      <h3>3. Purpose and Vision</h3>
+      <p>Our goal is to bridge the gap between scientific research and the broader economy through the use of decentralized finance (DeFi). By using Ephedra Token, we aim to enable more efficient funding for research initiatives while offering an easy-to-use cryptocurrency for daily transactions, all while promoting innovation and transparency in blockchain technologies.</p>
+
+      <h3>4. How the Token Works</h3>
+      <ul>
+        <li><strong>Fast Transactions:</strong> With Solana's blockchain, Ephedra ensures rapid transactions with minimal fees, making it suitable for both scientific funding and everyday payments.</li>
+        <li><strong>Security:</strong> The token operates on Solana's secure network, safeguarding users from fraud and ensuring data integrity.</li>
+        <li><strong>Multi-Use:</strong> Ephedra Token is usable for research-related donations, purchases, and can be traded on major exchanges, enabling broader use cases within the decentralized ecosystem.</li>
+      </ul>
+
+      <h3>5. Use Cases</h3>
+      <p>Ephedra Token serves multiple purposes:</p>
+      <ul>
+        <li><strong>Research Funding:</strong> A portion of the funds raised via the token is allocated to support scientific research and technological development, fostering innovation in blockchain and related fields.</li>
+        <li><strong>Payment System:</strong> Ephedra Token offers a decentralized and low-cost payment system for global transactions.</li>
+        <li><strong>Investment:</strong> Holders of Ephedra Token can benefit from potential value appreciation over time, supporting long-term growth in the ecosystem.</li>
+      </ul>
+
+      <h3>6. Market Strategy</h3>
+      <p>Our strategy includes listing Ephedra Token on various exchanges, conducting marketing campaigns to promote its benefits, and establishing partnerships with research organizations. By creating a community-driven ecosystem, we aim to empower token holders and foster widespread adoption.</p>
+
+    
+
+      <h3>7. Tokenomics</h3>
+      <p>The total supply of Ephedra Token is fixed at 1 billion tokens, with the following allocation:</p>
+      <ul>
+        <li><strong>60%:</strong> Token Sale</li>
+   
+        <li><strong>30%:</strong> Team and Advisors</li>
+        <li><strong>10%:</strong> Community Incentives and Rewards</li>
+      </ul>
+
+      <h3>8. Security and Compliance</h3>
+      <p>Ephedra Token prioritizes security and adheres to global regulatory standards. We ensure that all legal and privacy measures are in place to protect users while maintaining transparency in all operations.</p>
+
+  
+
+      <h3>9. Conclusion</h3>
+      <p>Ephedra Token is more than just a cryptocurrency; it represents a platform designed to support scientific research and provide efficient, decentralized financial services. With the power of Solana's blockchain and a dedicated community, we are building a future that benefits both the scientific community and the digital economy.</p>
+
+      <h3>10. Contact Us</h3>
+      <p>If you have any questions or would like to get involved, please contact us at:</p>
+      <ul>
+        <li><strong>Email:</strong> valdevcompany@gmail.com</li>
+        <li><strong>Website:</strong> www.ephedratoken.com</li>
+      </ul>
+    </div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

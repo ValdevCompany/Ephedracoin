@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earn by Watching Ads</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8;
+            color: #333;
+            overflow-x: hidden;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background-color: #4C9CE7;
+            color: #fff;
+            font-size: 1.6rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-weight: 600;
+        }
+
+        .account-icon {
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Main content */
+        .content {
+            margin-top: 20px;
+        }
+
+        .ad-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .ad-item {
+            background: #fff;
+            border-radius: 12px;
+            width: 320px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .ad-item:hover {
+            transform: scale(1.05);
+        }
+
+        .ad-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .ad-video {
+            width: 100%;
+            height: 180px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .timer {
+            font-size: 1.6rem;
+            color: #E74C3C;
+            margin-top: 10px;
+        }
+
+        .btn {
+            background-color: #FFB74D;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #F57C00;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #4C9CE7;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Account icon */
+        .account-icon {
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .ad-item {
+                width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Earn by Watching Ads</h1>
+        <div class="account-icon">&#128100;</div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2>Watch Ads and Earn Money!</h2>
+
+        <!-- Ad Container (horizontal scrollable) -->
+        <div class="ad-container">
+            <!-- Ad Item 1 -->
+            <div class="ad-item" id="ad1">
+                <h3>Ad 1: Technology</h3>
+                <video class="ad-video" id="adVideo1" controls>
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="timer" id="timer1">Time Remaining: 30s</p>
+                <button class="btn" onclick="startAd(1)">Start Watching</button>
+            </div>
+
+            <!-- Ad Item 2 -->
+            <div class="ad-item" id="ad2">
+                <h3>Ad 2: Fashion</h3>
+                <video class="ad-video" id="adVideo2" controls>
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="timer" id="timer2">Time Remaining: 30s</p>
+                <button class="btn" onclick="startAd(2)">Start Watching</button>
+            </div>
+
+            <!-- Ad Item 3 -->
+            <div class="ad-item" id="ad3">
+                <h3>Ad 3: Fitness</h3>
+                <video class="ad-video" id="adVideo3" controls>
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="timer" id="timer3">Time Remaining: 30s</p>
+                <button class="btn" onclick="startAd(3)">Start Watching</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        © 2024 Earn & Watch. All Rights Reserved.
+    </footer>
+
+    <script>
+        // Timer variables
+        let timers = [30, 30, 30]; // timers for each ad
+        let adTimers = [];
+        
+        // Function to start the ad and handle timer
+        function startAd(adIndex) {
+            let adVideo = document.getElementById(`adVideo${adIndex}`);
+            let timerDisplay = document.getElementById(`timer${adIndex}`);
+            let startButton = document.querySelector(`#ad${adIndex} .btn`);
+            
+            // Hide the start button
+            startButton.style.display = "none";
+            
+            // Play the ad video
+            adVideo.play();
+
+            // Start countdown timer for this ad
+            adTimers[adIndex] = setInterval(function() {
+                timers[adIndex]--;
+                timerDisplay.textContent = `Time Remaining: ${timers[adIndex]}s`;
+
+                if (timers[adIndex] <= 0) {
+                    clearInterval(adTimers[adIndex]);
+                    adVideo.pause();
+                    alert("You earned $0.01! Keep watching ads to earn more.");
+                    timers[adIndex] = 30;  // Reset the timer for the next ad
+                    timerDisplay.textContent = `Time Remaining: 30s`;
+                    startButton.style.display = "inline-block"; // Show the start button again
+                }
+            }, 1000);
+        }
+    </script>
+
+</body>
+</html>

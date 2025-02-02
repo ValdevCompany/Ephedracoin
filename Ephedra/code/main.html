@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ephedra</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Animate.css for animations -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    body {
+    font-family: 'Comic Sans MS', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff; /* Белый фон для всего сайта */
+  background-size: cover;
+  background-attachment: fixed;
+}
+@font-face {
+  font-family: 'Comic Sans MS';
+  src: url('Ephedra/PetrovSans-Trial-ExtraBold.otf') format('opentype');
+  font-weight: bold;
+}
+    nav {
+      background-color: rgba(74, 157, 63, 0.9);
+      color: #fff;
+    }
+    .navbar-brand .logoP {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .nav-link {
+      color: #fff;
+      font-weight: bold;
+    }
+    .nav-link:hover {
+      color: #e8f5e9;
+    }
+    .navbar-toggler {
+      border-color: #fff;
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCI+PHBhdGggZD0iTTE4IDMuNEMxOCAzLjQgMTcuMyAxMy4zIDE3LjMgMTMuMyIvPjwvc3ZnPg==");
+    }
+    section {
+      padding: 80px 20px;
+      margin-top: 56px; /* чтобы отступить от фиксированного меню */
+      position: relative;
+      z-index: 1;
+    }
+    section h1 {
+      color: #4a9d3f;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+    section p {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    footer {
+      background-color: rgba(74, 157, 63, 0.9);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .social-icons {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+    .social-icons li {
+      margin: 0 15px;
+    }
+    .social-icons a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 24px;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #e8f5e9;
+    }
+    .bg-light {
+      background-color: #f9f9f9;
+    }
+    .card-icon {
+      font-size: 40px;
+      color: #4a9d3f;
+    }
+    .card {
+      margin: 20px 0;
+    }
+    .card-title {
+      font-weight: bold;
+    }
+	.navbar-brand, .nav-link, h1, p {
+  font-family: 'Comic Sans MS', sans-serif;
+}
+/* Adjust the logo image styling */
+.logo-img {
+  height: 50px; /* Adjust the height of the logo as needed */
+  width: auto;  /* Maintain aspect ratio */
+  display: block;
+}
+
+/* Optional: Adjust the navbar padding and alignment */
+.navbar {
+  padding: 0.5rem 1rem;
+}
+
+/* Ensure that the navigation links are properly spaced */
+.navbar-nav .nav-link {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+ <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <a class="navbar-brand" href="{{ url_for('main') }}">
+    <img src="{{url_for('static', filename = 'ttt.png')}}" alt="Ephedra Logo" class="logo-img">
+	<div><span ><b>Ephedra</b></span></div>
+  </a>
+ 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+	  
+      <li class="nav-item"><a class="nav-link" href="#home">Main</a></li>
+     
+      <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="#innovation">Innovation</a></li>
+      <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      <li class="nav-item"><a class="nav-link" href="#information">Info</a></li>
+    </ul>
+  </div>
+</nav>
+ <!-- Sections -->
+<section id="home" class="text-center">
+  <div class="container">
+    <h1 class="animate__animated animate__fadeIn">Welcome to Ephedra</h1>
+    <p class="animate__animated animate__fadeIn animate__delay-1s">Ephedra is a token based on the Solana blockchain that provides unique opportunities for investing in scientific research. Our goal is to combine blockchain technologies with promising scientific projects, creating a platform for financing innovative research in various fields of science.</p>
+  </div>
+</section>
+
+
+
+<section id="about">
+  <div class="container text-center">
+    <h1 class="animate__animated animate__fadeIn">About Us</h1>
+    <p class="animate__animated animate__fadeIn animate__delay-1s">We are a team of professionals striving for excellence. Learn more about our company, our mission, and our values.</p>
+    <div class="row">
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="fas fa-globe card-icon"></i>
+            <h5 class="card-title">Decentralization</h5>
+            <p class="card-text">Ephedra offers a fully decentralized platform built on the Solana blockchain, where every user has complete control over their finances. We eliminate the need for intermediaries and centralized authorities, providing you with freedom and independence.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="fas fa-clock card-icon"></i>
+            <h5 class="card-title">Fast Transaction Processing</h5>
+            <p class="card-text">Solana's high-speed network ensures significantly faster transaction confirmation times, making Ephedra one of the quickest blockchain platforms for efficient transactions.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="fas fa-users card-icon"></i>
+            <h5 class="card-title">Community Support</h5>
+            <p class="card-text">Join our community! We have forums, chats, and social networks where you can find help, ask questions, and interact with other users of the Ephedra platform.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="1000">
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="fas fa-file-alt card-icon"></i>
+            <h5 class="card-title">Open-Source Software</h5>
+            <p class="card-text">Ephedra is an open-source project built on the Solana blockchain, allowing anyone to participate, modify, and distribute the software. We believe in transparency and independent verification.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="1200">
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="fas fa-chart-line card-icon"></i>
+            <h5 class="card-title">Token Trading</h5>
+            <p class="card-text">Ephedra tokens are actively traded on major exchanges, providing users with the ability to buy, sell, and exchange tokens. Enjoy seamless trading and explore the growing potential of the Ephedra token.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="1400">
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="fas fa-search card-icon"></i>
+            <h5 class="card-title">Funds for Research</h5>
+            <p class="card-text">A portion of the funds generated from the trading of Ephedra tokens is dedicated to supporting scientific research and technological advancements. Your participation in the Ephedra ecosystem helps fund innovation and development.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+ <!--
+  <section id="innovation" class="bg-light">
+    <div class="container text-center">
+      <h1 class="animate__animated animate__fadeIn">Innovation</h1>
+      <p class="animate__animated animate__fadeIn animate__delay-1s">Мы внедряем передовые технологии и инновационные решения, чтобы обеспечить лучшие результаты для наших пользователей. Узнайте о наших инновационных подходах.</p>
+    </div>
+  </section>
+  --> 
+  <section id="contact">
+    <div class="container text-center">
+      <h1 class="animate__animated animate__fadeIn">Contact</h1>
+      You can contact Ephedra coin project development team at valdevcompany@gmail.com
+    </div>
+  </section> 
+  
+<section id="information">
+  <div class="container text-center">
+    <h1 class="animate__animated animate__fadeIn">Information</h1>
+    <p class="animate__animated animate__fadeIn animate__delay-1s">Here you will find important information about our project and cryptocurrency. We provide transparency and details about our operations and technologies.</p>
+    <a href="{{ url_for('prvpc') }}" class="btn btn-primary animate__animated animate__fadeIn animate__delay-2s">Privacy Policy</a>
+    <a href="{{ url_for('papers') }}" class="btn btn-secondary animate__animated animate__fadeIn animate__delay-3s">White Paper</a>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Ephedra. Все права защищены.</p>
+    <ul class="social-icons">
+      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+      <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet Address</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        .btn-submit {
+            background-color: #007bff;
+            color: white;
+            width: 100%;
+            font-weight: 600;
+        }
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+        .card {
+            margin-top: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                Wallet Address
+            </div>
+            <div class="card-body">
+                <div id="walletAddress">Loading...</div>
+                <a href="generateMnemonic.html" class="btn btn-submit mt-4">Back to Generate Phrase</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.4.4/dist/ethers.umd.min.js"></script>
+    <script>
+        window.onload = function() {
+            // Получаем фразу из localStorage
+            const mnemonic = localStorage.getItem('mnemonic');
+            if (mnemonic && bip39.validateMnemonic(mnemonic)) {
+                // Создаем кошелек из фразы
+                const wallet = ethers.Wallet.fromMnemonic(mnemonic);
+                const address = wallet.address;
+                document.getElementById('walletAddress').innerText = `Your Wallet Address: ${address}`;
+            } else {
+                document.getElementById('walletAddress').innerText = 'Invalid or missing recovery phrase. Please generate the phrase first.';
+            }
+        };
+    </script>
+</body>
+</html>

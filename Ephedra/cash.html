@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка баланса кошелька</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"], button {
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+            max-width: 300px;
+        }
+        #balance {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Проверка баланса криптовалютного кошелька</h1>
+<input type="text" id="walletAddress" placeholder="Введите адрес кошелька" />
+<button id="checkBalance">Проверить баланс</button>
+
+<div id="balance"></div>
+
+<script>
+    document.getElementById('checkBalance').onclick = async function() {
+        const address = document.getElementById('walletAddress').value;
+        if (!address) {
+            alert('Пожалуйста, введите адрес кошелька.');
+            return;
+        }
+
+        // Пример использования API для получения баланса Ethereum
+        const url = `https://api.etherscan.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=YourAPIKeyHere`;
+
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+
+            if (data.status === "1") {
+                const balance = data.result / 1e18; // Конвертация из Wei в ETH
+                document.getElementById('balance').innerText = `Баланс: ${balance} ETH`;
+            } else {
+                document.getElementById('balance').innerText = 'Ошибка: Неверный адрес или баланс недоступен.';
+            }
+        } catch (error) {
+            console.error('Ошибка:', error);
+            document.getElementById('balance').innerText = 'Ошибка при получении данных о балансе.';
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate 12-word Recovery Phrase</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        .btn-submit {
+            background-color: #007bff;
+            color: white;
+            width: 100%;
+            font-weight: 600;
+        }
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+        .card {
+            margin-top: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                Generate 12-Word Recovery Phrase
+            </div>
+            <div class="card-body">
+                <button id="generateButton" class="btn btn-submit">Generate 12 Words</button>
+                <div id="mnemonicWords" class="mt-4"></div>
+                <a href="walletAddress.html" class="btn btn-submit mt-4">Go to Wallet</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bip39@3.0.0-rc.2/dist/index.js"></script>
+    <script>
+        // Генерация фразы
+        document.getElementById('generateButton').addEventListener('click', function() {
+            const mnemonic = bip39.generateMnemonic(); // Генерация фразы
+            document.getElementById('mnemonicWords').innerHTML = `<p><strong>Recovery Phrase:</strong> ${mnemonic}</p>`;
+            // Сохраняем фразу в localStorage для использования на другой странице
+            localStorage.setItem('mnemonic', mnemonic);
+        });
+    </script>
+</body>
+</html>
